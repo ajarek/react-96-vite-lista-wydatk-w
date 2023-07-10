@@ -9,7 +9,6 @@ export const Form = ({ onSubmit }) => {
     name: yup.string().required(),
     price: yup.string().required(),
     category: yup.string().required(),
-    
   })
 
   const {
@@ -27,8 +26,7 @@ export const Form = ({ onSubmit }) => {
       reset({
         name: '',
         price: '',
-        category:'',
-        
+        category: '',
       })
     }
   }, [formState, reset])
@@ -40,12 +38,20 @@ export const Form = ({ onSubmit }) => {
     >
       <div className='wrapper-input'>
         <label htmlFor='name'>Nazwa wydatku</label>
-        <input type='text' placeholder='Dodaj nazwę'{...register('name')} />
+        <input
+          type='text'
+          placeholder='Dodaj nazwę'
+          {...register('name')}
+        />
         <p>{errors.name?.message}</p>
       </div>
       <div className='wrapper-input'>
         <label htmlFor='price'>Nazwa wydatku</label>
-        <input type='number'placeholder='Dodaj cenę'{...register('price')} />
+        <input
+          type='number'
+          placeholder='Dodaj cenę'
+          {...register('price')}
+        />
         <p>{errors.price?.message}</p>
       </div>
 
@@ -65,8 +71,6 @@ export const Form = ({ onSubmit }) => {
         </select>
         <p>{errors?.category?.message}</p>
       </div>
-
-    
 
       <div className='wrapper-input'>
         <input

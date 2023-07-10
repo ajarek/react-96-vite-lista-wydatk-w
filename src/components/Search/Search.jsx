@@ -1,16 +1,27 @@
 import React from 'react'
 import './Search.css'
-const Search = ({ searchValue, setSearchValue, placeholder }) => {
+import { useState } from 'react';
+const Search = ({value,handleChange}) => {
+  
   return (
     <div className='search'>
-      <input
-        className='search-input'
-        type='search'
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder={placeholder}
-        autoFocus
-      />
+       <select
+           value={value} onChange={handleChange}
+          className='search-select'
+        >
+          <option value=''>Wybierz kategorię</option>
+          <option value='Spożywka'>Spożywka</option>
+          <option value='Rozrywka'>Rozrywka</option>
+          <option value='AGD'>AGD</option>
+          <option value='Opłaty'>Opłaty</option>
+          <option value='Media'>Media</option>
+          <option value='Inne'>Inne</option>
+        </select>
+       
+       
+       
+       
+      
     </div>
   )
 }
