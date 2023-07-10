@@ -1,0 +1,14 @@
+.box{
+  
+  width: 550px;
+  height: 597px;
+  background-color: var(--grey-light-super);
+  border-radius: 15px;
+  padding: 20px 50px;
+}
+@media (max-width:550px) {
+  .box{
+    width: 100%;
+    min-width: 320px;
+  }
+}
