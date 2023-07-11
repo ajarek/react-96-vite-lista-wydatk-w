@@ -7,10 +7,13 @@ const Box = () => {
   const [selectedValue, setSelectedValue] = useState('');
   
   console.log(selectedValue);
+  const handleForm=(data)=>{
+    console.log(data);
+  }
   return (
     <div className='box'>
       <Search value={selectedValue} handleChange={(e)=>setSelectedValue(e.target.value)}/>
-      <Form/>
+      <Form onSubmit={handleForm}/>
     </div>
   )
 }
