@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import uuid from 'react-uuid';
 
 import './Form.css'
 import { useEffect } from 'react'
@@ -9,6 +10,7 @@ export const Form = ({ onSubmit }) => {
     name: yup.string().required(),
     price: yup.string().required(),
     category: yup.string().required(),
+    id: yup.string(),
   })
 
   const {
@@ -36,6 +38,7 @@ export const Form = ({ onSubmit }) => {
       className='form'
       onSubmit={handleSubmit(onSubmit)}
     >
+      <input type="hidden"  {...register('id') } value={uuid()} />
       <div className='wrapper-input'>
         <label htmlFor='name'>Nazwa wydatku</label>
         <input

@@ -1,9 +1,9 @@
 .box{
   
   width: 550px;
-  height: 597px;
+  min-height: 597px;
   background-color: var(--grey-light-super);
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 20px 50px;
 }
 @media (max-width:550px) {
