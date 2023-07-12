@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react'
 const Box = () => {
   const [selectedValue, setSelectedValue] = useState('')
   const [newList, setNewList] = useState([])
+  const [allSummary, setAllSummary] = useState(0)
 
   const handleForm = (data) => {
     // Dodajemy nowe dane do localStorage
@@ -19,6 +20,14 @@ const Box = () => {
     // Aktualizujemy stan 'data' w komponencie, co spowoduje ponowne renderowanie
     setNewList(updatedData)
   }
+  useEffect(() => {
+    // Odczytujemy dane z localStorage i obliczmy sumę wartości.
+    const totalValueProducts = fetchStorage('dataSet').reduce(
+      (acc, item) => acc + +item.price,
+      0
+    )
+    setAllSummary(totalValueProducts.toFixed(2))
+  }, [newList])
 
   useEffect(() => {
     // Odczytujemy dane z localStorage i aktualizujemy stan 'data'
@@ -43,6 +52,7 @@ const Box = () => {
       <DataList
         list={newList}
         deleteItem={handleDelete}
+        summary={allSummary}
       />
     </div>
   )

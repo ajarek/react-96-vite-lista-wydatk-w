@@ -48,4 +48,15 @@ tr:last-child td {
 }
 .pln{
   margin-right: 8px;
+  
+}
+.delete-item{
+  cursor: pointer;
+}
+.summary td{
+  background-color: var(--green-light);
+  border: none;
+}
+.summary td:nth-child(2){
+  text-align: center;
 }

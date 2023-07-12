@@ -1,6 +1,6 @@
 import './DataList.css'
 
-const DataList = ({list, deleteItem}) => {
+const DataList = ({list, deleteItem, summary}) => {
   return (
     <table>
     <thead>
@@ -12,18 +12,23 @@ const DataList = ({list, deleteItem}) => {
         </tr>
     </thead>
     <tbody>
-        {list?.map((el,index)=>{
+        {list?.map((el)=>{
          return(
 
-        <tr key={index}>
+        <tr key={el.id}>
             <td>{el.name}</td>
             <td className='price'><span className='pln'>PLN</span>{(+el.price).toFixed(2)} </td>
             <td>{el.category}</td>
-            <td onClick={()=>deleteItem(el.id)}>❌</td>
+            <td className='delete-item' onClick={()=>deleteItem(el.id)}>❌</td>
         </tr>
          )
         })}
-        
+        <tr className='summary' >
+            <td >Razem:</td>
+            <td colspan="2" ><span className='pln'>PLN</span>{summary}</td>
+            <td ></td>
+            
+        </tr>
         
     </tbody>
 </table>

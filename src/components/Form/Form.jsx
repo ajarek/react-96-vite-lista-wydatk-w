@@ -44,6 +44,7 @@ export const Form = ({ onSubmit }) => {
         <input
           type='text'
           placeholder='Dodaj nazwę'
+          autoFocus
           {...register('name')}
         />
         <p>{errors.name?.message}</p>
@@ -53,6 +54,9 @@ export const Form = ({ onSubmit }) => {
         <input
           type='number'
           placeholder='Dodaj cenę'
+          step={0.01}
+          min={0}
+          
           {...register('price')}
         />
         <p>{errors.price?.message}</p>
