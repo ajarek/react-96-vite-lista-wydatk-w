@@ -1,6 +1,6 @@
 import './DataList.css'
 
-const DataList = ({list, deleteItem, summary}) => {
+const DataList = ({list, deleteItem, summary,nameCategory}) => {
   return (
     <table>
     <thead>
@@ -12,7 +12,9 @@ const DataList = ({list, deleteItem, summary}) => {
         </tr>
     </thead>
     <tbody>
-        {list?.map((el)=>{
+        {list
+        .filter((fl)=>fl.category===nameCategory||nameCategory==='')
+        .map((el)=>{
          return(
 
         <tr key={el.id}>

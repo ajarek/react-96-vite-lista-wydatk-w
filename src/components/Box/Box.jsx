@@ -53,6 +53,7 @@ const Box = () => {
         list={newList}
         deleteItem={handleDelete}
         summary={allSummary}
+        nameCategory={selectedValue}
       />
     </div>
   )
