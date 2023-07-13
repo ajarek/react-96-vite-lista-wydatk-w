@@ -50,7 +50,7 @@ export const Form = ({ onSubmit }) => {
         <p>{errors.name?.message}</p>
       </div>
       <div className='wrapper-input'>
-        <label htmlFor='price'>Nazwa wydatku</label>
+        <label htmlFor='price'>Cena wydatku</label>
         <input
           type='number'
           placeholder='Dodaj cenę'

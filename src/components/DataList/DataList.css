@@ -60,3 +60,12 @@ tr:last-child td {
 .summary td:nth-child(2){
   text-align: center;
 }
+@media (max-width:370px) {
+  th,
+td {
+  
+  padding: 5px 2px;
+  
+}
+
+}
