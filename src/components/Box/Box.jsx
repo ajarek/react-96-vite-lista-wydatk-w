@@ -20,14 +20,15 @@ const Box = () => {
     // Aktualizujemy stan 'data' w komponencie, co spowoduje ponowne renderowanie
     setNewList(updatedData)
   }
+
   useEffect(() => {
-    // Odczytujemy dane z localStorage i obliczmy sumę wartości.
-    const totalValueProducts = fetchStorage('dataSet').reduce(
-      (acc, item) => acc + +item.price,
-      0
-    )
+    const row= [...document.querySelectorAll('.sum')]
+    const arraySum=row.map(rw=>rw.textContent)
+    const totalValueProducts =arraySum.reduce(
+      (acc, item) => acc + (+item),0)
+     
     setAllSummary(totalValueProducts.toFixed(2))
-  }, [newList])
+  })
 
   useEffect(() => {
     // Odczytujemy dane z localStorage i aktualizujemy stan 'data'

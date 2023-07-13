@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import './DataList.css'
 
 const DataList = ({list, deleteItem, summary,nameCategory}) => {
+  
   return (
     <table>
     <thead>
@@ -19,7 +21,7 @@ const DataList = ({list, deleteItem, summary,nameCategory}) => {
 
         <tr key={el.id}>
             <td>{el.name}</td>
-            <td className='price'><span className='pln'>PLN</span>{(+el.price).toFixed(2)} </td>
+            <td className='price'><span className='pln'>PLN</span><span className='sum'>{(+el.price).toFixed(2)}</span> </td>
             <td>{el.category}</td>
             <td className='delete-item' onClick={()=>deleteItem(el.id)}>❌</td>
         </tr>
@@ -27,7 +29,7 @@ const DataList = ({list, deleteItem, summary,nameCategory}) => {
         })}
         <tr className='summary' >
             <td >Razem:</td>
-            <td colspan="2" ><span className='pln'>PLN</span>{summary}</td>
+            <td colSpan="2" ><span className='pln'>PLN</span>{summary}</td>
             <td ></td>
             
         </tr>
